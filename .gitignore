@@ -34,3 +34,4 @@ build/
 
 tools
 .devbox
+.DS_Store
