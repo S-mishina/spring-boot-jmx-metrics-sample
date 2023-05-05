@@ -1,4 +1,6 @@
-# README(SETUP)
+# README
+
+## setup
 
 ### dependence (relationship)
 
@@ -11,6 +13,8 @@
 $ devbox shell
 ```
 
+## execution method
+
 ### How to run the application
 
 ```:terminal
@@ -21,3 +25,16 @@ $ ./mvnw spring-boot:run \
     -Dcom.sun.management.jmxremote.authenticate=false \
     -Dcom.sun.management.jmxremote.ssl=false"
 ```
+
+## Examples of Operation
+
+Launch the program to access the application.
+curl will also work.
+
+```:ex
+curl http://localhost
+```
+
+Check with jmx and you will see a RANDOM number.
+
+![jconsole](../README/img/jconsole.png)
