@@ -37,4 +37,4 @@ curl http://localhost
 
 Check with jmx and you will see a RANDOM number.
 
-![jconsole](../README/img/jconsole.png)
+![jconsole](/README/img/jconsole.png)
