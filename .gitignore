@@ -35,3 +35,5 @@ build/
 tools
 .devbox
 .DS_Store
+load-test/*.html
+load-test/*/*.pyc
