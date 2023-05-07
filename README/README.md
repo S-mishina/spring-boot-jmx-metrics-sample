@@ -38,3 +38,5 @@ curl http://localhost
 Check with jmx and you will see a RANDOM number.
 
 ![jconsole](/README/img/jconsole.png)
+
+A detailed view of the metrics is described in tab.
