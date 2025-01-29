@@ -1,5 +1,5 @@
 FROM openjdk:11 as builder
 COPY . .
-RUN ./mvnw clean package  -Pno-otel -DskipTests
+RUN ./mvnw clean package
 FROM adoptopenjdk/openjdk11:jre-11.0.19_7-debianslim as executor
 COPY --from=builder /target/app.jar /app.jar

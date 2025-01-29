@@ -29,7 +29,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
           logout: false
-      - name: Build and push Docker image no open telemetry version
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -37,15 +37,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:no-otel_${{ github.sha }}
-            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:no-otel-latest
-      - name: Build and push Docker image open telemetry version
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./Dockerfile.otel
-          platforms: linux/amd64
-          push: true
-          tags: |
-            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:otel_${{ github.sha }}
-            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:otel-latest
+            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:${{ github.sha }}
+            ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:latest
