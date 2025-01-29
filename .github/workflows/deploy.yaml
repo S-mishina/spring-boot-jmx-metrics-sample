@@ -33,7 +33,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile.no-otel
           platforms: linux/amd64
           push: true
           tags: |
