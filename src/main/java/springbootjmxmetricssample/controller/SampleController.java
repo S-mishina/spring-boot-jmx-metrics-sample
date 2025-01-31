@@ -1,6 +1,6 @@
 package springbootjmxmetricssample.controller;
 
-import static springbootjmxmetricssample.util.Util.generateRandomValue;
+import springbootjmxmetricssample.util.Util;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +11,13 @@ import springbootjmxmetricssample.jmx.MyManagedBean;
 public class SampleController {
     @GetMapping("/")
     public String index() {
-        int newValue = generateRandomValue();
+        int newValue = Util.generateRandomValue();
         System.out.println("newValue: " + newValue);
         MyManagedBean.setValue1(newValue);
-        return "Hello World!";
+        String url = System.getenv("TEST_ENDPOINT");
+        if (url != null) {
+            Util.httpRequest(url);
+        }
+        return "{\"message\": \"Hello World!\"}";
     }
 }
